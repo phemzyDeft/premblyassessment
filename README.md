@@ -1,73 +1,75 @@
-# React + TypeScript + Vite
+# Prembly Assessment Projects
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains three independent React applications demonstrating different features and implementations.
 
-Currently, two official plugins are available:
+## Projects
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. Shopping Cart (TypeScript)
+**Location:** `shopping-cart-ts/`
 
-## React Compiler
+A fully functional e-commerce shopping cart built with React, TypeScript, Redux Toolkit, and Tailwind CSS.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Features:**
+- Product listing with images
+- Add to cart functionality
+- Cart management (increment, decrement, remove items)
+- Order summary with totals
+- Mobile responsive design
+- Redux state management
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**Run:**
+```bash
+npm run dev:cart:ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Shopping Cart (JavaScript)
+**Location:** `shopping-cart-js/`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Same shopping cart application implemented in JavaScript for comparison.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**Run:**
+```bash
+npm run dev:cart:js
 ```
+
+### 3. API Demos (TypeScript)
+**Location:** `api-demos-ts/`
+
+A collection of pages demonstrating API integration with different public APIs.
+
+**Features:**
+- **Quotes Page:** Paginated inspirational quotes
+- **COVID-19 Page:** US COVID statistics with pagination (20 items per page)
+- **Users Page:** Random user generator with detailed cards
+- Shared Loader and Error components
+- Mobile responsive design
+- Modern UI with gradients and animations
+
+**Run:**
+```bash
+npm run dev:api:ts
+```
+
+## Installation
+
+```bash
+npm install
+```
+
+## Available Scripts
+
+- `npm run dev:cart:ts` - Run Shopping Cart (TypeScript)
+- `npm run dev:cart:js` - Run Shopping Cart (JavaScript)
+- `npm run dev:api:ts` - Run API Demos (TypeScript)
+- `npm run build` - Build all projects
+- `npm run lint` - Run ESLint
+
+## Tech Stack
+
+- **React 19**
+- **TypeScript**
+- **Vite**
+- **Redux Toolkit** (for shopping carts)
+- **React Router**
+- **Tailwind CSS**
+- **React Icons**

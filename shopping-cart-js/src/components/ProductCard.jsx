@@ -1,15 +1,6 @@
 import Button from "./Button";
-import type { Product } from "../types";
 
-type Props = {
-	product: Product;
-	quantity: number;
-	onAdd: (product: Product) => void;
-	onIncrement: (productId: string) => void;
-	onDecrement: (productId: string) => void;
-};
-
-export default function ProductCard({ product, quantity, onAdd, onIncrement, onDecrement }: Props) {
+export default function ProductCard({ product, quantity, onAdd, onIncrement, onDecrement }) {
 	return (
 		<div className="rounded-xl border border-zinc-200 overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
 			<img src={product.imageUrl} alt={product.name} className="h-40 w-full object-cover" />

@@ -11,17 +11,17 @@ export default function ProductsPage() {
 	const [showToast, setShowToast] = useState(false);
 	const [toastMessage, setToastMessage] = useState("");
 
-	const handleAddToCart = (product: typeof products[0]) => {
+	const handleAddToCart = (product) => {
 		dispatch(addToCart(product));
 		setToastMessage(`${product.name} added to cart!`);
 		setShowToast(true);
 	};
 
-	const handleIncrement = (productId: string) => {
+	const handleIncrement = (productId) => {
 		dispatch(increment(productId));
 	};
 
-	const handleDecrement = (productId: string) => {
+	const handleDecrement = (productId) => {
 		dispatch(decrement(productId));
 	};
 

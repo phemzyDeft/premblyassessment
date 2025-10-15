@@ -1,18 +1,13 @@
 {
-  "name": "prembly-assessment",
+  "name": "prembly",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.0",
   "type": "module",
-  "description": "Prembly Assessment - Shopping Cart and API Demos",
   "scripts": {
-    "dev:cart:ts": "cd shopping-cart-ts && vite",
-    "dev:cart:js": "cd shopping-cart-js && vite",
-    "dev:api:ts": "cd api-demos-ts && vite",
-    "build:cart:ts": "cd shopping-cart-ts && tsc -b && vite build",
-    "build:cart:js": "cd shopping-cart-js && vite build",
-    "build:api:ts": "cd api-demos-ts && tsc -b && vite build",
-    "build": "npm run build:cart:ts && npm run build:cart:js && npm run build:api:ts",
-    "lint": "eslint shopping-cart-ts shopping-cart-js api-demos-ts"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.9.0",

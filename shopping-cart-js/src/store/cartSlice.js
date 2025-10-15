@@ -1,15 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { CartItem, Product } from "../types";
 
-export type CartState = {
-	items: Record<string, CartItem>;
-};
-
-const initialState: CartState = {
+const initialState = {
 	items: {},
 };
 
-function incrementQuantity(current: number, delta: number): number {
+function incrementQuantity(current, delta) {
 	const next = current + delta;
 	return next < 1 ? 1 : next;
 }
@@ -18,7 +13,7 @@ const cartSlice = createSlice({
 	name: "cart",
 	initialState,
 	reducers: {
-		addToCart(state, action: { payload: Product }) {
+		addToCart(state, action) {
 			const product = action.payload;
 			const existing = state.items[product.id];
 			if (existing) {
@@ -27,14 +22,14 @@ const cartSlice = createSlice({
 				state.items[product.id] = { product, quantity: 1 };
 			}
 		},
-		removeFromCart(state, action: { payload: string }) {
+		removeFromCart(state, action) {
 			delete state.items[action.payload];
 		},
-		increment(state, action: { payload: string }) {
+		increment(state, action) {
 			const item = state.items[action.payload];
 			if (item) item.quantity = incrementQuantity(item.quantity, 1);
 		},
-		decrement(state, action: { payload: string }) {
+		decrement(state, action) {
 			const item = state.items[action.payload];
 			if (item) {
 				if (item.quantity <= 1) {

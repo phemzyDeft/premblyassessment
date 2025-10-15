@@ -1,15 +1,7 @@
-import type { CartItem as TCartItem } from "../types";
 import Button from "./Button";
 import QuantityControl from "./QuantityControl";
 
-type Props = {
-	item: TCartItem;
-	onIncrement: () => void;
-	onDecrement: () => void;
-	onRemove: () => void;
-};
-
-export default function CartItem({ item, onIncrement, onDecrement, onRemove }: Props) {
+export default function CartItem({ item, onIncrement, onDecrement, onRemove }) {
 	const { product, quantity } = item;
 	return (
 		<div className="flex flex-col sm:grid sm:grid-cols-[80px_1fr_auto] gap-4 py-4 border-b border-zinc-200">
