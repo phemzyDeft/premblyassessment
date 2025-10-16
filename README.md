@@ -43,7 +43,7 @@ A collection of pages demonstrating API integration with different public APIs.
 - **Users Page:** Random user generator with detailed cards
 - Shared Loader and Error components
 - Mobile responsive design
-- Modern UI with gradients and animations
+- Modern UI with animations
 
 **Run:**
 ```bash
